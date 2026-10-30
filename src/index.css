@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@keyframes tin-rattle {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  15% { transform: translate(-7px, -3px) rotate(-2.5deg); }
+  30% { transform: translate(7px, 2px) rotate(2.5deg); }
+  45% { transform: translate(-6px, 3px) rotate(-2deg); }
+  60% { transform: translate(6px, -2px) rotate(2deg); }
+  75% { transform: translate(-3px, 1px) rotate(-1deg); }
+  90% { transform: translate(3px, -1px) rotate(1deg); }
+}
+
+@keyframes tin-solid-shake {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-2px, 0); }
+  75% { transform: translate(2px, 0); }
+}
+
+.animate-tin-rattle {
+  animation: tin-rattle 0.55s ease-in-out;
+}
+
+.animate-tin-solid {
+  animation: tin-solid-shake 0.35s ease-in-out;
+}
+
+/* Brushed metal effect for the survival tin */
+.brushed-tin {
+  background: linear-gradient(
+    135deg,
+    #e2e8f0 0%,
+    #cbd5e1 28%,
+    #f1f5f9 50%,
+    #94a3b8 78%,
+    #cbd5e1 100%
+  );
+}
+
+.brushed-tin-well {
+  background: radial-gradient(
+      circle at 25% 20%,
+      rgba(255, 255, 255, 0.55),
+      transparent 60%
+    ),
+    linear-gradient(160deg, #cbd5e1 0%, #94a3b8 55%, #aeb9c7 100%);
+}
+
+.mirror-polished {
+  background: linear-gradient(
+    125deg,
+    #ffffff 0%,
+    #e0f2fe 22%,
+    #ffffff 42%,
+    #bae6fd 58%,
+    #f8fafc 78%,
+    #cbd5e1 100%
+  );
+}
+
+/* Print stylesheet so leaders/members can print clean worksheets */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only-sheet {
+    box-shadow: none !important;
+    border: 1px solid #333 !important;
+    margin: 0 !important;
+    padding: 16px !important;
+    width: 100% !important;
+  }
+}
